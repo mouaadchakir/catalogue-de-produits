@@ -62,4 +62,8 @@ export class ProductTableComponent implements OnInit {
     };
     this.productsList = [...this.productsList];
   }
+
+  formatPrice(price: number): string {
+    return `${price.toFixed(2).replace('.', ',')} €`;
+  }
 }
