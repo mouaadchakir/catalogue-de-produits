@@ -1,0 +1,29 @@
+<table border="1" cellpadding="8" cellspacing="0" style="width: 100%; border-collapse: collapse;">
+  <thead>
+    <tr>
+      <th>Aperçu</th>
+      <th>ID</th>
+      <th>Nom</th>
+      <th>Description</th>
+      <th>Prix</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (product of productsList; track product.id) {
+      <tr>
+        <td>
+          <img [src]="product.image" [alt]="product.name" style="width: 50px;" />
+        </td>
+        <td>{{ product.id }}</td>
+        <td>{{ product.name }}</td>
+        <td>{{ product.description }}</td>
+        <td>{{ product.price }}</td>
+        <td>
+          <button (click)="editProduct(product.id)">Editer</button>
+          <button (click)="deleteProduct(product.id)">Supprimer</button>
+        </td>
+      </tr>
+    }
+  </tbody>
+</table>
