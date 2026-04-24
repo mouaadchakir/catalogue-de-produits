@@ -1,0 +1,7 @@
+<div style="display: flex;flex-wrap: wrap;gap: 20px;justify-content: space-between;margin: 40px;">
+    @for (product of products(); track product.id) {
+        <div>
+            <app-product [product]="product" />
+        </div>
+    }
+</div>
