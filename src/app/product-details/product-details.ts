@@ -1,4 +1,4 @@
-Uimport { HttpClient } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Component, inject, signal } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductModel } from '../product/product.model';
@@ -23,10 +23,10 @@ export class ProductDetails {
 
       this.httpClient.get<ProductModel>(`https://fakestoreapi.com/products/${params['id']}`)
       .subscribe({
-        next: (product) => {
+        next: (product: ProductModel) => {
           this.product.set(product);
         },
-        error: (error) => {
+        error: (error: unknown) => {
           console.error(error);
         },
         complete: () => {
